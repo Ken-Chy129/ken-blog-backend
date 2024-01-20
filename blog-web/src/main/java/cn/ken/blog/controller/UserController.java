@@ -30,9 +30,14 @@ public class UserController {
     @GetMapping("/currentUser")
     public Result<User> getCurrentUser() {
         User user = new User();
-        user.setName("123");
+        user.setName("得过且过的勇者y");
         user.setAccess("admin");
-        
+        user.setAvatar("https://cdn.ken-chy129.cn/blog/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20220521192649.jpg");
         return Result.success(user);
+    }
+    
+    @PostMapping("/login/outLogin")
+    public Result<Boolean> outLogin() {
+        return Result.success(true);
     }
 }
