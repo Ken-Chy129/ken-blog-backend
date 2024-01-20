@@ -1,7 +1,12 @@
 package cn.ken.blog.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import cn.ken.blog.common.model.PageResult;
+import cn.ken.blog.common.model.Result;
+import cn.ken.blog.domain.dto.ArticleRequestDTO;
+import cn.ken.blog.domain.entity.Article;
+import cn.ken.blog.service.article.ArticleService;
+import jakarta.annotation.Resource;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * <pre>
@@ -12,11 +17,21 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2024/1/13 17:04
  */
 @RestController
+@RequestMapping("/article")
 public class ArticleController {
     
-    @GetMapping("article")
-    public String article() {
-        return "article";
+    @Resource
+    private ArticleService articleService;
+    
+    @GetMapping("/page")
+    public PageResult<Article> article(ArticleRequestDTO articleRequestDTO) {
+        System.out.println(articleRequestDTO);
+        return articleService.page(articleRequestDTO);
+    }
+    
+    @PostMapping()
+    public Result<Boolean> postArticle(@RequestBody Article article) {
+        return articleService.save(article);
     }
     
 }

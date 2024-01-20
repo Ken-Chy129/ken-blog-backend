@@ -10,7 +10,7 @@
     </parent>
     <groupId>cn.ken</groupId>
     <artifactId>blog</artifactId>
-    <version>${blog.version}</version>
+    <version>0.0.1-SNAPSHOT</version>
     <name>blog</name>
     <description>blog</description>
     <packaging>pom</packaging>
@@ -22,8 +22,9 @@
     </modules>
     
     <properties>
+        <project.version>0.0.1-SNAPSHOT</project.version>
         <java.version>21</java.version>
-        <blog.version>0.0.1-SNAPSHOT</blog.version>
+        <mybatis.version>3.5.5</mybatis.version>
     </properties>
     
     <dependencyManagement>
@@ -31,17 +32,17 @@
             <dependency>
                 <groupId>cn.ken</groupId>
                 <artifactId>blog-web</artifactId>
-                <version>${blog.version}</version>
+                <version>0.0.1-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>cn.ken</groupId>
                 <artifactId>blog-service</artifactId>
-                <version>${blog.version}</version>
+                <version>0.0.1-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>cn.ken</groupId>
                 <artifactId>blog-core</artifactId>
-                <version>${blog.version}</version>
+                <version>0.0.1-SNAPSHOT</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
